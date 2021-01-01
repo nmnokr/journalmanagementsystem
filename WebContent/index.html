@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html>
+<title>Makale Yönetim Sistemi</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="js/core.js"></script>
+<script src="js/department.js"></script>
+<script src="js/editor.js"></script>
+<script src="js/article.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet"
+	href="https://code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+<script src="js/permission.js"></script>
+<link rel="stylesheet" href="w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html, body, h1, h2, h3, h4, h5 {
+	font-family: "Raleway", sans-serif
+}
+</style>
+<body class="w3-light-grey">
+	<!-- fadeIn fadeOut scriptleri -->
+	<script>
+		$(document).ready(function() {
+			
+			
+			hakemislemleri
+			
+			$("#hakemislemleri").click(function() {
+		 
+				$("#editorslemleri").fadeOut();
+				$("#aizintalebi").fadeOut();
+				$("#aiziniptali").fadeOut();
+				$("#aizinhakedis").fadeOut();
+				$("#izinhakedisdiv").fadeOut();
+				$("#izintalebidiv").fadeOut();
+				$("#getallpersoneldiv").fadeOut();
+				$("#makalekayıtdiv").fadeOut();
+				$("#tümizinlerdiv").fadeOut();
+				$("#apersonellistesi").fadeOut();
+				$("#editormakaleliste").fadeOut();
+				$("#aiziniptali").fadeOut(); 
+				$("#aizinhakedis").fadeOut();
+				$("#hakemlistediv").fadeIn();
+			    $("#makalelistediv").fadeOut();
+				$("#izinonayislemleridiv").fadeOut();
+				$("#setdepartmanmanagersdiv").fadeOut();
+				$("#kendiizinlerim").fadeOut();
+				$("#tarihigecmeyenizinler").fadeOut();
+			});
+			
+			
+			$("#aiziniptali").click(function() {
+				
+				$("#izinhakedisdiv").fadeOut();
+				$("#izintalebidiv").fadeIn();
+				$("#getallpersoneldiv").fadeOut();
+				$("#makalekayıtdiv").fadeOut();
+				$("#tümizinlerdiv").fadeOut();
+				$("#apersonellistesi").fadeOut();
+				$("#editormakaleliste").fadeOut();
+				
+				$("#makalelistediv").fadeOut();
+				$("#izinonayislemleridiv").fadeOut();
+				$("#setdepartmanmanagersdiv").fadeOut();
+				$("#kendiizinlerim").fadeOut();
+				$("#tarihigecmeyenizinler").fadeOut();
+			});
+			$("#aizinhakedis").click(function() {
+			 //makale kayıt
+				$("#hakemlistediv").fadeOut();
+				$("#izinhakedisdiv").fadeOut();
+				$("#apersonellistesi").fadeOut();
+				$("#izintalebidiv").fadeOut();
+				$("#getallpersoneldiv").fadeOut();
+				$("#makalekayıtdiv").fadeIn();
+				$("#tümizinlerdiv").fadeOut();
+				$("#editormakaleliste").fadeOut();
+				$("#makalelistediv").fadeOut();
+				$("#izinonayislemleridiv").fadeOut();
+				$("#setdepartmanmanagersdiv").fadeOut();
+				$("#kendiizinlerim").fadeOut();
+				$("#tarihigecmeyenizinler").fadeOut();
+			});
+			$("#aizintalebi").click(function() {
+				//makale durum
+				$("#makalelistediv").show();
+				$("#izintalebidiv").fadeOut();
+				$("#hakemlistediv").fadeOut();
+				$("#makalekayıtdiv").hide();
+				$("#izintalebidiv").fadeOut();
+				$("#izinhakedisdiv").fadeOut();
+				$("#editormakaleliste").fadeOut();
+				$("#getallpersoneldiv").fadeOut();
+				 
+				$("#tümizinlerdiv").fadeOut();
+				$("#izinonayislemleridiv").fadeOut();
+				$("#setdepartmanmanagersdiv").fadeOut();
+				$("#kendiizinlerim").fadeOut();
+				$("#editormakaleliste").fadeOut();
+				$("#tarihigecmeyenizinler").fadeOut();
+			});
+			$("#apersonelekle").click(function() {
+				$("#makalelistediv").fadeOut();
+				$("#makalekayıtdiv").fadeIn();
+				$("#izintalebidiv").fadeOut();
+				$("#getallpersoneldiv").fadeOut();
+				$("#izinhakedisdiv").fadeOut();
+				$("#editormakaleliste").fadeOut();
+				$("#tümizinlerdiv").fadeOut();
+				$("#izinonayislemleridiv").fadeOut();
+				$("#setdepartmanmanagersdiv").fadeOut();
+				$("#kendiizinlerim").fadeOut();
+				$("#tarihigecmeyenizinler").fadeOut();
+			});
+			$("#apersonellistesi").click(function() {
+				$("#makalelistediv").fadeOut();
+				$("#getallpersoneldiv").fadeIn();
+				$("#editormakaleliste").fadeOut();
+				$("#izintalebidiv").fadeOut();
+				$("#makalekayıtdiv").fadeOut();
+				$("#izinhakedisdiv").fadeOut();
+				$("#tümizinlerdiv").fadeOut();
+				$("#izinonayislemleridiv").fadeOut();
+				$("#setdepartmanmanagersdiv").fadeOut();
+				$("#kendiizinlerim").fadeOut();
+				$("#tarihigecmeyenizinler").fadeOut();
+			});
+			$("#aizinlistesi").click(function() {
+				$("#makalelistediv").fadeOut();
+				$("#tümizinlerdiv").fadeIn();
+				$("#editormakaleliste").fadeOut();
+				$("#izintalebidiv").fadeOut();
+				$("#getallpersoneldiv").fadeOut();
+				$("#izinhakedisdiv").fadeOut();
+				$("#makalekayıtdiv").fadeOut();
+				$("#izinonayislemleridiv").fadeOut();
+				$("#setdepartmanmanagersdiv").fadeOut();
+				$("#kendiizinlerim").fadeOut();
+				$("#tarihigecmeyenizinler").fadeOut();
+			});
+			$("#editorslemleri").click(function() {
+				$("#editormakaleliste").fadeOut();
+				$("#makalelistediv").fadeOut();
+				$("#tümizinlerdiv").fadeOut();
+				$("#izintalebidiv").fadeOut();
+				$("#getallpersoneldiv").fadeOut();
+				$("#izinhakedisdiv").fadeOut();
+				$("#makalekayıtdiv").fadeOut();
+				$("#editormakaleliste").fadeIn();
+				 
+				$("#setdepartmanmanagersdiv").fadeOut();
+				$("#kendiizinlerim").fadeOut();
+				$("#izinonayislemleridiv").fadeOut();
+
+				$("#tarihigecmeyenizinler").fadeOut();
+
+				$("#hakemlistediv").fadeOut();
+				 
+			});
+			$("#adepartmanyonetimi").click(function() {
+				$("#makalelistediv").fadeOut();
+				$("#tümizinlerdiv").fadeOut();
+				$("#izintalebidiv").fadeOut();
+				$("#getallpersoneldiv").fadeOut();
+				$("#izinhakedisdiv").fadeOut();
+				$("#editormakaleliste").fadeOut();
+				$("#makalekayıtdiv").fadeOut();
+				$("#izinonayislemleridiv").fadeOut();
+				$("#setdepartmanmanagersdiv").fadeIn();
+				$("#kendiizinlerim").fadeOut();
+		
+				$("#tarihigecmeyenizinler").fadeOut();
+
+			});
+
+			$("#atarihigecmeyenizinler").click(function() {
+				$("#makalelistediv").fadeOut();
+				$("#tümizinlerdiv").fadeOut();
+				$("#izintalebidiv").fadeOut();
+				$("#getallpersoneldiv").fadeOut();
+				$("#izinhakedisdiv").fadeOut();
+				$("#editormakaleliste").fadeOut();
+				$("#makalekayıtdiv").fadeOut();
+				$("#izinonayislemleridiv").fadeOut();
+				$("#setdepartmanmanagersdiv").fadeOut();
+				$("#kendiizinlerim").fadeOut();
+				$("#tarihigecmeyenizinler").fadeIn();
+
+			});
+
+			$("#akendiizinlerim").click(function() {
+				$("#makalelistediv").fadeOut();
+				$("#tümizinlerdiv").fadeOut();
+				$("#izintalebidiv").fadeOut();
+				$("#getallpersoneldiv").fadeOut();
+				$("#editormakaleliste").fadeOut();
+				$("#izinhakedisdiv").fadeOut();
+				$("#makalekayıtdiv").fadeOut();
+				$("#izinonayislemleridiv").fadeOut();
+				$("#setdepartmanmanagersdiv").fadeOut();
+				$("#kendiizinlerim").fadeIn();
+				$("#tarihigecmeyenizinler").fadeOut();
+
+			});
+
+		});
+	</script>
+	<script>
+		// Get the Sidebar
+		var mySidebar = document.getElementById("mySidebar");
+		// Get the DIV with overlay effect
+		var overlayBg = document.getElementById("myOverlay");
+		// Toggle between showing and hiding the sidebar, and add overlay effect
+		function w3_open() {
+			if (mySidebar.style.display === 'block') {
+				mySidebar.style.display = 'none';
+				overlayBg.style.display = "none";
+			} else {
+				mySidebar.style.display = 'block';
+				overlayBg.style.display = "block";
+			}
+		}
+		// Close the sidebar with the close button
+		function w3_close() {
+			mySidebar.style.display = "none";
+			overlayBg.style.display = "none";
+		}
+	</script>
+	<!-- Top container -->
+	<div class="w3-bar w3-top w3-black w3-large" style="z-index: 4">
+		<button
+			class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey"
+			onclick="w3_open();">
+			<i class="fa fa-bars"></i> Menu
+		</button>
+		<span class="w3-bar-item w3-right">-</span>
+	</div>
+	<!-- Sidebar/menu -->
+	<nav class="w3-sidebar w3-collapse w3-white w3-animate-left"
+		style="z-index: 3; width: 300px;" id="mySidebar">
+		<br>
+		<div class="w3-container w3-row">
+			<div class="w3-col s4"></div>
+			<div class="w3-col s8 w3-bar">
+				<span>Hoşgeldiniz, <strong id="nickname">a</strong></span><br>
+				<a href="logout" style="text-decoration: none"
+					class="w3-bar-item w3-button"> <i class="fa fa-power-off"></i>&nbsp
+					Çıkış
+					<table class="w3-table  w3-white">
+						<tr>
+							<td>Kullanıcı :</td>
+
+						</tr>
+						<tr>
+							<td><p id="kullanici"></p></td>
+
+						</tr>
+
+					</table>
+				</a>
+
+			</div>
+
+		</div>
+
+		<hr>
+		<div class="w3-container">
+			<h5>Kontrol Paneli</h5>
+		</div>
+	 
+	</nav>
+	<!-- Overlay effect when opening sidebar on small screens -->
+	<div class="w3-overlay w3-hide-large w3-animate-opacity"
+		onclick="w3_close()" style="cursor: pointer" title="close side menu"
+		id="myOverlay"></div>
+	<!-- !PAGE CONTENT! -->
+	<div class="w3-main" style="margin-left: 300px; margin-top: 43px;">
+		<!-- Header -->
+		<header class="w3-container" style="padding-top: 22px">
+			<h5>
+				<b><i class="fa fa-cog"></i> Makale Yönetim Sistemi</b>
+			</h5>
+		</header>
+		<div class="w3-row-padding w3-margin-bottom">
+			<a href="#" id="aizinhakedis">
+				<div class="w3-quarter">
+					<div class="w3-container w3-hover-black w3-red w3-padding-16">
+						<div class="w3-left">
+							<i class="fa fa-trophy w3-xlarge"></i>
+						</div>
+						<h4>&nbsp Makale Gönder</h4>
+						<h6>Yazarlarin Yeni Makale Ekleme sayfası</h6>
+					</div>
+				</div>
+			</a> <a href="#" id="aiziniptali">
+				<div class="w3-quarter">
+					<div class="w3-container w3-blue w3-hover-black w3-padding-16">
+						<div class="w3-left">
+							<i class="fa fa-remove w3-xlarge"></i>
+						</div>
+						<h4>&nbsp Hakem Onay/red</h4>
+						<h6>Hakemlere gelen makalerin onay/red sayfasi</h6>
+					</div>
+				</div>
+			</a> <a href="#" id="aizintalebi">
+				<div class="w3-quarter">
+					<div class="w3-container w3-hover-black w3-teal w3-padding-16">
+						<div class="w3-left">
+							<i class="fa fa-edit w3-xlarge"></i>
+						</div>
+						<h4>&nbsp Makale Durum</h4>
+						<h6>Yazarlarin Makale Sürecini Izleme Sayfasi</h6>
+					</div>
+				</div>
+			</a> <a href="#" id="editorslemleri">
+				<div class="w3-quarter">
+					<div
+						class="w3-container w3-hover-black w3-orange w3-text-white w3-padding-16">
+						<div class="w3-left">
+							<i class="fa fa-sort-alpha-asc w3-xlarge"></i>
+						</div>
+						<h4>&nbsp Editör Onay/red</h4>
+						<h6>Editöre gelen makalerin onay/red sayfasi</h6>
+					</div>
+				</div>
+			</a> <a href="#" id="hakemislemleri">
+				<div class="w3-quarter">
+					<div
+						class="w3-container w3-hover-black w3-black w3-text-white w3-padding-16">
+						<div class="w3-left">
+							<i class="fa fa-sort-alpha-asc w3-xlarge"></i>
+						</div>
+						<h4>&nbsp Hakem Onay/red</h4>
+						<h6>Hakeme gelen makalerin onay/red sayfasi</h6>
+					</div>
+				</div>
+			</a>
+
+
+
+		</div>
+		<div>
+
+			<div id="izinhakedisdiv">
+				<fieldset id="izinhakedisdiv">
+					<div class="w3-container">
+						<hr>
+						<h2>İzin Hakediş</h2>
+						<br>
+						<!-- personel bilgisi-->
+						<div id="personelInformation" class="container ">
+							<div class="col-lg-12">
+								<hr>
+								<h2>Personel Bilgisi</h2>
+								<br> <strong>Personel : </strong> <span class="personel"
+									id="personel_name"></span> <strong>Departman :</strong> <span
+									class="personel" id="personel_department"> <strong>Sicil
+										No :</strong> <span class="personel" id="personel_sicilNo"></span> <br />
+									<br />
+							</div>
+						</div>
+						<table class="w3-table izinhakedis w3-white">
+							<tr>
+								<th>Personel</th>
+								<th>Geçerli Olacağı Tarih</th>
+								<th>Hakedilen Gün Sayısı</th>
+							</tr>
+							<tr>
+								<td><select required id="selectpersonelRight1"
+									class="form-control input-md">
+										<option>Seçiniz</option>
+								</select></td>
+								<td>
+									<div class="datepicker">
+										<input required id="tarihright1" class="form-control"
+											type="text">
+										<!-- seçilen tarih GG-AA-YYYY şeklinde -->
+										<input type="hidden" id="tarih-dbright1"
+											name="gecerliolacagitarih">
+										<!-- mysql'e göre uyarlanan tarih YYYY-AA-GG şeklinde -->
+									</div>
+								</td>
+								<td><input required id="hakedilengunsayisi1"
+									name="hakedilengunsayisi" placeholder=""
+									class="form-control input-md" type="number"></td>
+							</tr>
+						</table>
+						<br>
+						<table>
+							<tr>
+								<td>
+									<button type="button" id="ekle">Ekle</button>
+									<button type="button" id="sil">Kaldır</button>
+								</td>
+							</tr>
+						</table>
+						<button id="addRightOfPermissionBtn"
+							class="form-control btn-success btn ">Kaydet</button>
+						<br /> <br />
+					</div>
+					<!-- izin hakedis listeleme-->
+					<div id="list_rightOfPermission">
+						<table id="getAllRightOfPermission" class="table table-striped">
+							<tr>
+								<th>Sicil No</th>
+								<th>Geçerli Olacağı Tarih</th>
+								<th>Hakedilen Gün Sayısı</th>
+								<th>Mevcut Yıl İçin Hakedilen Gün Sayısı</th>
+								<th></th>
+							</tr>
+						</table>
+						<button type="button" id="deleteAllRight" class="btn btn-danger"
+							onclick="deleteAllRight()">Hepsini Sil</button>
+					</div>
+				</fieldset>
+			</div>
+			<div id="bos"></div>
+			<div id="izintalebidiv">
+				<fieldset id="izinhakedisdiv">
+					<form id="">
+						<div class="w3-panel">
+							<h2>Hakem Makale Onay/red Sayfasi</h2>
+							<br>
+							<div class="w3-row-padding" style="margin: 0 -16px">
+								<table id="FirstManagerApproval"
+									class="w3-table  w3-striped w3-white">
+									<tr>
+										<th>ID</th>
+										<th>Nace Kodu</th>
+										<th>Tarih</th>
+										<th>Baslık</th>
+										<th>Yazar adi</th>
+										<th>Makale</th>
+
+										<th>Onay</th>
+										<th>Red</th>
+									</tr>
+								</table>
+
+							</div>
+						</div>
+
+					</form>
+				</fieldset>
+			</div>
+			<div id="tümizinlerdiv">
+
+				<fieldset id="tümizinlerdiv">
+					<div class="w3-container">
+						<hr>
+						<h2>İzin Listesi</h2>
+						<br>
+						<table id="tümizinlertable" class="w3-table  w3-striped w3-white">
+							<tr>
+								<th>ID</th>
+								<th>İzin Oluşturma Tarihi</th>
+								<th>İzin Başlama Tarihi</th>
+								<th>İzin Bitiş Tarihi</th>
+								<th>Gün</th>
+								<th>İzin Nedeni</th>
+								<th>Telefon No</th>
+								<th>Adres</th>
+								<th>Durum</th>
+							</tr>
+						</table>
+					</div>
+				</fieldset>
+			</div>
+
+			<div id="tarihigecmeyenizinler">
+
+				<fieldset id="tarihigecmeyenizinler">
+					<div class="w3-container">
+						<hr>
+						<h2>Tarihi Gecmeyen İzinler</h2>
+						<br>
+						<table id="tarihigecmeyenizinlertable"
+							class="w3-table  w3-striped w3-white">
+							<tr>
+								<th>ID</th>
+								<th>İzin Oluşturma Tarihi</th>
+								<th>İzin Başlama Tarihi</th>
+								<th>İzin Bitiş Tarihi</th>
+								<th>Gün</th>
+								<th>İzin Nedeni</th>
+								<th>Telefon No</th>
+								<th>Adres</th>
+								<th>Durum</th>
+							</tr>
+						</table>
+					</div>
+				</fieldset>
+			</div>
+			<div id="kendiizinlerim">
+
+				<fieldset id="kendiizinlerim">
+					<div class="w3-container">
+						<hr>
+						<h2>İzinlerim</h2>
+						<br>
+						<table id="kendiizinlerimtable"
+							class="w3-table  w3-striped w3-white">
+							<tr>
+								<th>ID</th>
+								<th>İzin Oluşturma Tarihi</th>
+								<th>İzin Başlama Tarihi</th>
+								<th>İzin Bitiş Tarihi</th>
+								<th>Gün</th>
+								<th>İzin Nedeni</th>
+								<th>Telefon No</th>
+								<th>Adres</th>
+								<th>Durum</th>
+								<th>İptal</th>
+							</tr>
+						</table>
+					</div>
+				</fieldset>
+			</div>
+
+			<fieldset id="makalekayıtdiv">
+
+				<div class="w3-container">
+					<h2>Makale Gönder</h2>
+					<br>
+
+					<div class="form-group">
+						<label for="Baslik">Baslik</label> <input type="text"
+							class="form-control" id="arttittle" placeholder="Baslik">
+					</div>
+					<div class="form-group">
+						<label for="nacecode">Nace Kodu</label> <input type="text"
+							class="form-control" id="nacecode" placeholder="Nace Kodu">
+					</div>
+
+					<div class="form-group">
+						<label for="exampleFormControlTextarea1">Makaleniz</label>
+						<textarea class="form-control" id="exampleFormControlTextarea1"
+							rows="3"></textarea>
+					</div>
+					<button id="gondermakale" class="form-control btn-info btn ">Kaydet</button>
+
+				</div>
+			</fieldset>
+
+			<fieldset id="getallpersoneldiv">
+				<div id="getallpersoneldiv">
+					<h2>Personel Listesi</h2>
+					<table id="getallpersoneltable"
+						class="w3-table w3-striped w3-white">
+						<tr>
+							<th>Sicil No</th>
+							<th>Ad</th>
+							<th>Soyad</th>
+							<th>E-mail</th>
+							<th>Password</th>
+							<th>İşe Başlama Tarihi</th>
+							<th>Pozisyon</th>
+							<th>İkinci Yönetici Onayı Gerekli mi?</th>
+							<th>SİL</th>
+						</tr>
+					</table>
+				</div>
+			</fieldset>
+			<div id="izinonayislemleridiv">
+				<div id="getAllFirstManagerApproval">
+					<fieldset id="getAllFirstManagerApproval">
+						<div class="w3-container">
+							<hr>
+							<h2>Makale Onay/red Sayfasi</h2>
+							<br>
+							<table id="FirstManagerApproval"
+								class="w3-table  w3-striped w3-white">
+								<tr>
+									<th>ID</th>
+									<th>Nace Kodu</th>
+									<th>Tarih</th>
+									<th>Baslık</th>
+									<th>Yazar adi</th>
+									<th>Makale</th>
+
+									<th>Onay</th>
+									<th>Red</th>
+								</tr>
+							</table>
+						</div>
+					</fieldset>
+				</div>
+			</div>
+
+
+			<div id="makalelistediv">
+				<fieldset id="makalelistediv">
+
+					<div id="aramasonucları">
+						<div class="w3-container">
+							<hr>
+							<h2>Arama Sonuçları Yazar</h2>
+							<br>
+							<table id="iziniptalsonuclari"
+								class="w3-table  w3-striped w3-white">
+								<tr>
+
+									<th></th>
+									<th>Baslık</th>
+									<th>Durum</th>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+
+		<div id="hakemlistediv">
+				<fieldset id="hakemlistediv">
+
+					<div id="aramasonucları">
+						<div class="w3-container">
+							<hr>
+							<h2>Arama Sonuçları Hakem</h2>
+							<br>
+							<table id="hakemliste"
+								class="w3-table  w3-striped w3-white">
+								<tr>
+
+									<th></th>
+									<th>Baslık</th>
+									<th>Yazar</th>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+
+
+		</div>
+		<div id="editormakaleliste">
+			<fieldset id="editormakaleliste">
+
+				<div id="aramasonucları">
+					<div class="w3-container">
+						<hr>
+						<h2>Arama Sonuçları Editor</h2>
+						<br>
+						<table id="editormakalelistetable"
+							class="w3-table  w3-striped w3-white">
+							<tr>
+								<th>Makale No</th>
+								<th>Nace NO</th>
+								<th>Baslık</th>
+								<th>Durum</th>
+
+
+							</tr>
+						</table>
+					</div>
+
+				</div>
+			</fieldset>
+		</div>
+
+
+	</div>
+	<!-- Footer -->
+	<footer class="w3-container w3-padding-16 w3-dark-grey"> </footer>
+
+	<!-- End page content -->
+
+
+
+
+	<div class="modal fade" id="HakemMakaleDetay" role="dialog">
+		<div class="modal-dialog modal-lg">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Makale Bilgisi</h4>
+				</div>
+				<div class="modal-body">
+					<div class="w3-panel">
+						<h2>Makale Red/Onay</h2>
+						<br>
+						<div class="w3-row-padding" style="margin: 0 -16px">
+							<div class="w3-container">
+								<h5>Makale Bilgisi</h5>
+								<table class="w3-table  w3-white">
+									<tr>
+										<td>Makale :</td>
+
+									</tr>
+									<tr>
+										<td><p id="article"></p></td>
+
+									</tr>
+									<tr>
+										<td><p id="id"></p></td>
+
+									</tr>
+
+								</table>
+							</div>
+
+						</div>
+						<table class="w3-table  w3-white">
+							<tr>
+								<td>Yorum</td>
+								<td><i><textarea id="yorum" class="form-control"
+											name="yorum"></textarea></i></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				<div class="modal-footer" id="modalfooter">
+					<button class="btn btn-success" type="button"
+						onclick="onayMakaleHakem(document.getElementById('id').textContent)">Onay</button>
+					<button class="btn btn-danger"
+						onclick="redMakaleHakem(document.getElementById('id').textContent)"
+						type="button" id="redbutonHR">Red</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+	<div class="modal fade" id="editorMakaleDetay" role="dialog">
+		<div class="modal-dialog modal-lg">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Makale Bilgisi</h4>
+				</div>
+				<div class="modal-body">
+					<div class="w3-panel">
+						<h2>Makale Red/Onay</h2>
+						<br>
+						<div class="w3-row-padding" style="margin: 0 -16px">
+							<div class="w3-container">
+								<h5>Makale Bilgisi</h5>
+								<table class="w3-table  w3-white">
+									<tr>
+										<td>Makale :</td>
+
+									</tr>
+									<tr>
+										<td><p id="article"></p></td>
+
+									</tr>
+									<tr>
+										<td><p id="id"></p></td>
+
+									</tr>
+
+								</table>
+							</div>
+
+						</div>
+						<table class="w3-table  w3-white">
+							<tr>
+								<td>Yorum</td>
+								<td><i><textarea id="yorum" class="form-control"
+											name="yorum"></textarea></i></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				<div class="modal-footer" id="modalfooter">
+					<button class="btn btn-success" type="button"
+						onclick="onayMakaleEditor(document.getElementById('id').textContent)">Onay</button>
+					<button class="btn btn-danger"
+						onclick="redMakaleEditor(document.getElementById('id').textContent)"
+						type="button" id="redbutonHR">Red</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="editorAutoReferee" role="dialog">
+		<div class="modal-dialog modal-lg">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+
+				</div>
+				<div class="modal-body">
+					<div class="w3-panel">
+						<h2>Atanacak Hakem Adaylari</h2>
+						<br>
+						<div class="w3-row-padding" style="margin: 0 -16px">
+							<div class="w3-container">
+								<h5>Hakem Bilgisi</h5>
+
+								<table id="numan" class="w3-table  w3-striped w3-white">
+									<tr>
+
+										<td><p id="hakemId"></p></td>
+										<td><p id="hakemName"></p></td>
+										<td><p id="hakemSurname"></p></td>
+										<td><p id="nacesi"></p></td>
+
+
+									</tr>
+								</table>
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+				<div class="modal-footer" id="modalfooter">
+					<button
+						onclick="getAutoReferee(document.getElementById('nacesi')textContent)"
+						type="button" class="btn btn-info btn-sm" data-toggle="modal"
+						data-target="#editorAutoReferee">Yenile</button>
+
+
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+</body>
+</html>

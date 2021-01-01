@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<meta charset="UTF-8">
+<title>Akademik Yönetim Sistemi</title>
+</head>
+<body>
+	<div class="container ">
+		<div class="col-lg-4">
+			<div class="page-header">
+				<h2>Akademik Makale Yönetim Sistemi</h2>
+			</div>
+			<form method="POST" action="j_security_check" class="form-top">
+				<div class="form-group">
+					<label for="text">Kullanıcı Ad:</label> <input required  type="text"
+						class="form-control" placeholder="Enter email"
+						name="j_username">
+				</div>
+				<div class="form-group">
+					<label for="pwd">Sifre:</label> <input required  type="password"
+						class="form-control" placeholder="Enter password"
+						name="j_password">
+				</div>
+				<button type="submit" class="btn btn-success btn-md">Giris Yap</button>
+			</form>
+		</div>
+	</div>
+</body>
+
+</html>
